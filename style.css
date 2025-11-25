@@ -1,0 +1,386 @@
+/* General Styling */
+:root {
+    --primary-color: #7b00a3; /* Darker Purple for accents */
+    --secondary-color: #5d0080; /* Slightly lighter purple */
+    --text-color-light: #ffffff;
+    --text-color-dark: #333333;
+    --background-dark: #1e002e; /* Dark purple background */
+    --background-light: #2c0042; /* Lighter purple for sections */
+    --button-primary-bg: #e020ff;
+    --button-primary-hover: #c000df;
+    --button-secondary-bg: transparent;
+    --button-secondary-border: #e020ff;
+    --button-secondary-hover: #e020ff;
+    --card-background: #3a0050;
+    --border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color-light);
+    background-color: var(--background-dark);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color-light);
+}
+
+ul {
+    list-style: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn.primary {
+    background-color: var(--button-primary-bg);
+    color: var(--text-color-light);
+    border: none;
+}
+
+.btn.primary:hover {
+    background-color: var(--button-primary-hover);
+}
+
+.btn.secondary {
+    background-color: var(--button-secondary-bg);
+    color: var(--text-color-light);
+    border: 2px solid var(--button-secondary-border);
+}
+
+.btn.secondary:hover {
+    background-color: var(--button-secondary-hover);
+    color: var(--background-dark); /* Text color changes on hover */
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--background-dark);
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.navbar .logo img {
+    height: 40px; /* Adjust logo size */
+    margin-right: 10px;
+}
+
+.navbar nav ul {
+    display: flex;
+}
+
+.navbar nav ul li {
+    margin-left: 30px;
+}
+
+.navbar nav ul li a {
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    color: var(--button-primary-bg);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(to right, var(--background-dark), var(--primary-color));
+    padding: 80px 0;
+    text-align: center;
+    overflow: hidden; /* For image positioning */
+    position: relative;
+}
+
+.hero-section .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2; /* Ensures content is above background elements */
+}
+
+.hero-image img {
+    max-width: 300px; /* Adjust as needed */
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(224, 32, 255, 0.8));
+}
+
+.hero-text {
+    max-width: 500px;
+    text-align: left;
+}
+
+.hero-text h1 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.hero-text p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+/* Services Section */
+.services-section {
+    background-color: var(--background-light);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.services-section h2,
+.portfolio-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+.services-section h2::after,
+.portfolio-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    width: 60px;
+    height: 4px;
+    background-color: var(--button-primary-bg);
+    border-radius: 2px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-item {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(224, 32, 255, 0.3);
+}
+
+.service-item img {
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--button-primary-bg);
+}
+
+.service-item p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Portfolio Section */
+.portfolio-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--background-dark);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-item {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(224, 32, 255, 0.3);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 220px; /* Fixed height for consistency */
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio-info {
+    padding: 20px;
+}
+
+.portfolio-info h3 {
+    font-size: 1.3em;
+    margin-bottom: 5px;
+    color: var(--button-primary-bg);
+}
+
+.portfolio-info p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9em;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--background-light);
+    padding: 40px 0 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.footer .footer-logo {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.footer .footer-logo img {
+    height: 35px;
+    margin-right: 10px;
+}
+
+.footer .social-links a {
+    margin: 0 10px;
+}
+
+.footer .social-links img {
+    height: 24px;
+    filter: invert(100%); /* Make social icons white */
+}
+
+.footer .contact-info p {
+    margin: 5px 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9em;
+}
+
+.footer .copyright {
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+    }
+    .navbar nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .navbar nav ul li {
+        margin: 5px 15px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.8em;
+    }
+    .hero-text p {
+        font-size: 1.1em;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .footer .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 2em;
+    }
+    .hero-text p {
+        font-size: 1em;
+    }
+    .hero-image img {
+        max-width: 200px;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+    .services-section h2,
+    .portfolio-section h2 {
+        font-size: 2em;
+    }
+    .service-grid,
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
